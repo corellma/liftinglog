@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 
 export default function Home() {
   return (
@@ -32,6 +32,13 @@ export default function Home() {
         try this neat little web app to track your PRs. All data is saved
         locally in your browser.
       </Typography>
+      <Button
+        style={{ backgroundColor: "#282c34" }}
+        variant="contained"
+        color="primary"
+      >
+        Primary
+      </Button>
     </div>
   );
 }
