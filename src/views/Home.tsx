@@ -9,6 +9,7 @@ export default function Home() {
         flexDirection: "column",
         height: "50vh",
         textAlign: "center",
+        alignItems: "center",
       }}
     >
       <Typography variant="h4" style={{ paddingTop: "40px" }}>
@@ -32,13 +33,14 @@ export default function Home() {
         try this neat little web app to track your PRs. All data is saved
         locally in your browser.
       </Typography>
-      <Button
-        style={{ backgroundColor: "#282c34" }}
-        variant="contained"
-        color="primary"
-      >
-        Primary
+      <div style={{width: "100%", height: "100%", paddingTop: "30px"}}>
+        <Button variant="contained" color="primary" style={{backgroundColor: "#282c34", marginRight: "20px", width: "30%"}}>
+        Track a new Lift
       </Button>
+      <Button variant="contained" color="primary" style={{backgroundColor: "#282c34", width: "30%"}}>
+      Visit your Dashboard
+      </Button>
+      </div>
     </div>
   );
 }
