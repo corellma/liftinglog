@@ -22,8 +22,8 @@ export default function Home() {
         variant="subtitle1"
         style={{
           paddingTop: "20px",
-          paddingLeft: "100px",
-          paddingRight: "100px",
+          paddingLeft: "300px",
+          paddingRight: "300px",
         }}
       >
         Do you even track, bro? As a serious lifter, you should keep track of
@@ -33,13 +33,27 @@ export default function Home() {
         try this neat little web app to track your PRs. All data is saved
         locally in your browser.
       </Typography>
-      <div style={{width: "100%", height: "100%", paddingTop: "30px"}}>
-        <Button variant="contained" color="primary" style={{backgroundColor: "#282c34", marginRight: "20px", width: "30%"}}>
-        Track a new Lift
-      </Button>
-      <Button variant="contained" color="primary" style={{backgroundColor: "#282c34", width: "30%"}}>
-      Visit your Dashboard
-      </Button>
+      <div style={{ width: "100%", height: "100%", paddingTop: "30px" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          href="/lifts"
+          style={{
+            backgroundColor: "#282c34",
+            marginRight: "20px",
+            width: "15%",
+          }}
+        >
+          Track a new Lift
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          href="/dashboard"
+          style={{ backgroundColor: "#282c34", width: "15%" }}
+        >
+          Visit your Dashboard
+        </Button>
       </div>
     </div>
   );
