@@ -7,7 +7,7 @@ export default function Home() {
         background: "#DCDCDC",
         display: "flex",
         flexDirection: "column",
-        height: "50vh",
+        height: "100vh",
         textAlign: "center",
         alignItems: "center",
       }}
@@ -22,8 +22,8 @@ export default function Home() {
         variant="subtitle1"
         style={{
           paddingTop: "20px",
-          paddingLeft: "300px",
-          paddingRight: "300px",
+          paddingLeft: "100px",
+          paddingRight: "100px",
         }}
       >
         Do you even track, bro? As a serious lifter, you should keep track of
@@ -41,7 +41,7 @@ export default function Home() {
           style={{
             backgroundColor: "#282c34",
             marginRight: "20px",
-            width: "15%",
+            width: "40%",
           }}
         >
           Track a new Lift
@@ -50,7 +50,7 @@ export default function Home() {
           variant="contained"
           color="primary"
           href="/dashboard"
-          style={{ backgroundColor: "#282c34", width: "15%" }}
+          style={{ backgroundColor: "#282c34", width: "40%" }}
         >
           Visit your Dashboard
         </Button>
