@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Button, TextField, Typography } from "@material-ui/core";
 
 export default function Lifts() {
+  const [lift, setLift] = useState("");
   const [weight, setWeight] = useState("");
   const [reps, setReps] = useState("");
-  const [lift, setLift] = useState("");
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState("");
+
+  function handleSubmit(event: Event) {
+    event.preventDefault();
+    const { lift, weight, reps, date } = event.target.elements;
+    console.log(lift, weight, reps, date);
+  }
 
   return (
     <div
@@ -21,12 +27,13 @@ export default function Lifts() {
       <Typography variant="h6" style={{ paddingTop: "20px", width: "300px" }}>
         Enter a new PR for a Lift
       </Typography>
-      <form style={{ width: "300px" }}>
+      <form style={{ width: "300px" }} onSubmit={handleSubmit}>
         <div>
           <TextField
             id="lift"
             label="Lift"
             style={{ width: "100%", marginTop: "20px" }}
+            onChange={(e) => setLift(e.target.value)}
             required
           />
         </div>
@@ -50,6 +57,7 @@ export default function Lifts() {
             label="Repetitions"
             type="number"
             style={{ width: "100%", marginTop: "20px" }}
+            onChange={(e) => setReps(e.target.value)}
             required
           />
         </div>
@@ -63,6 +71,7 @@ export default function Lifts() {
             InputLabelProps={{
               shrink: true,
             }}
+            onChange={(e) => setDate(e.target.value)}
           />
         </div>
         <Button
