@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React,  { useState } from "react";
 import { Button, TextField, Typography } from "@material-ui/core";
 
 export default function Lifts() {
@@ -7,10 +7,13 @@ export default function Lifts() {
   const [reps, setReps] = useState("");
   const [date, setDate] = useState("");
 
-  function handleSubmit(event: Event) {
+  function handleSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
-    const { lift, weight, reps, date } = event.target.elements;
-    console.log(lift, weight, reps, date);
+    const target = event.target as typeof event.target & {
+      lift: {value: string};
+    }
+    const lift = target.lift.value;
+    console.log(lift);
   }
 
   return (
@@ -30,7 +33,7 @@ export default function Lifts() {
       <form style={{ width: "300px" }} onSubmit={handleSubmit}>
         <div>
           <TextField
-            id="lift"
+            name="lift"
             label="Lift"
             style={{ width: "100%", marginTop: "20px" }}
             onChange={(e) => setLift(e.target.value)}
