@@ -1,4 +1,5 @@
-import { Button, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
+import GreyButton from "../components/Button";
 
 export default function Home() {
   return (
@@ -34,26 +35,8 @@ export default function Home() {
         locally in your browser.
       </Typography>
       <div style={{ width: "100%", height: "100%", paddingTop: "30px" }}>
-        <Button
-          variant="contained"
-          color="primary"
-          href="/lifts"
-          style={{
-            backgroundColor: "#282c34",
-            marginRight: "20px",
-            width: "40%",
-          }}
-        >
-          Track a new Lift
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          href="/dashboard"
-          style={{ backgroundColor: "#282c34", width: "40%" }}
-        >
-          Visit your Dashboard
-        </Button>
+        <GreyButton textOnButton="Track a Lift" href="/lifts" marginRight />
+        <GreyButton textOnButton="Visit your Dashboard" href="/dashboard" />
       </div>
     </div>
   );
