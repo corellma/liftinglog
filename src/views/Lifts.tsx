@@ -8,12 +8,7 @@ export default function Lifts() {
   const [date, setDate] = useState("");
 
   function handleSubmit(event: React.SyntheticEvent) {
-    event.preventDefault();
-    const target = event.target as typeof event.target & {
-      lift: {value: string};
-    }
-    const lift = target.lift.value;
-    console.log(lift);
+    console.log("hi");
   }
 
   return (
