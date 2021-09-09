@@ -7,7 +7,7 @@ export class MyDatabase extends Dexie {
   constructor() {
     super("db");
     this.version(1).stores({
-      liftinglog: "++id,lift,weight,e1rm,reps,date",
+      liftinglog: "++id,lift,weight,reps,e1rm,date",
     });
     this.liftinglog = this.table("liftinglog");
     this.liftinglog.mapToClass(Lift);

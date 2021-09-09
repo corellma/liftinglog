@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button, TextField } from "@material-ui/core";
+import { Lift } from "../models/lift";
 
 type FormValues = {
   lift: string;
@@ -10,7 +11,10 @@ type FormValues = {
 
 function LiftInputForm() {
   const { register, handleSubmit } = useForm<FormValues>();
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    const new_lift = new Lift(data.lift, data.weight, data.reps, data.date);
+    new_lift.addToDB();
+  };
 
   return (
     <form style={{ width: "300px" }} onSubmit={handleSubmit(onSubmit)}>
@@ -29,8 +33,8 @@ function LiftInputForm() {
           type="number"
           style={{ width: "100%", marginTop: "20px" }}
           inputProps={{
-            minLength: 0,
             step: "2.5",
+            min: "0",
           }}
           required
         />
@@ -41,6 +45,11 @@ function LiftInputForm() {
           label="Repetitions"
           type="number"
           style={{ width: "100%", marginTop: "20px" }}
+          inputProps={{
+            step: "1.0",
+            min: "0",
+            max: "20",
+          }}
           required
         />
       </div>
