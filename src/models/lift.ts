@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { NewLiftEntry } from "../components/LiftInputForm";
+import { LiftInput } from "./lift_input";
 
 export class Lift {
   id: number;
@@ -9,7 +9,7 @@ export class Lift {
   e1RM: number;
   date: Date;
 
-  constructor(submission: NewLiftEntry) {
+  constructor(submission: LiftInput) {
     this.lift = submission.lift;
     this.weight = submission.weight;
     this.reps = submission.reps;

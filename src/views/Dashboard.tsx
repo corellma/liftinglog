@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import GreyButton from "../components/Button";
-import Lift_Collection from "../models/lift_collection";
+import Lift_Collection from "../components/lift_collection";
 
 export default function Dashboard() {
   return (

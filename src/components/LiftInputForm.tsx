@@ -7,18 +7,11 @@ import {
   InputLabel,
 } from "@material-ui/core";
 import { Lift } from "../models/lift";
-import React from "react";
-
-export type NewLiftEntry = {
-  lift: string;
-  weight: number;
-  reps: number;
-  date?: Date;
-};
+import { LiftInput } from "../models/lift_input";
 
 function LiftInputForm() {
-  const { register, handleSubmit } = useForm<NewLiftEntry>();
-  const onSubmit: SubmitHandler<NewLiftEntry> = (new_lift_data, event) => {
+  const { register, handleSubmit } = useForm<LiftInput>();
+  const onSubmit: SubmitHandler<LiftInput> = (new_lift_data, event) => {
     const new_lift = new Lift(new_lift_data);
     new_lift.addToDB();
     event?.target.reset();
