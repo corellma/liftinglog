@@ -15,7 +15,7 @@ function LiftInputForm() {
   const onSubmit: SubmitHandler<NewLiftEntry> = (new_lift_data, event) => {
     const new_lift = new Lift(new_lift_data);
     new_lift.addToDB();
-    event?.target.reset()
+    event?.target.reset();
   };
 
   return (
@@ -55,7 +55,6 @@ function LiftInputForm() {
           required
         />
       </div>
-
       <div>
         <TextField
           style={{ width: "100%", marginTop: "20px" }}

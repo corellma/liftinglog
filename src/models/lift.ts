@@ -1,7 +1,8 @@
-import { LiftingLog } from "./db";
+import { db } from "./db";
 import { NewLiftEntry } from "../components/LiftInputForm";
 
 export class Lift {
+  id: number;
   lift: string;
   weight: number;
   reps: number;
@@ -21,7 +22,6 @@ export class Lift {
   }
 
   public addToDB(): void {
-    var db = new LiftingLog();
     db.lifts.add(this);
   }
 }
