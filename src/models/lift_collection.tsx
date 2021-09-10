@@ -5,7 +5,6 @@ export default function Lift_Collection() {
   const lifts = useLiveQuery(() => db.lifts.toArray());
 
   if (!lifts) return null; // Still loading.
-
   return (
     <ul>
       {lifts.map((lift) => (
