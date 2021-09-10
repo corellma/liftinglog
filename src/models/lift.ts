@@ -13,12 +13,19 @@ export class Lift {
     this.lift = submission.lift;
     this.weight = submission.weight;
     this.reps = submission.reps;
+    this.e1RM = this.estimate_1rm(this.weight, this.reps);
     if (submission.date) this.date = submission.date;
-    this.estimate_1rm();
+    console.log(this.e1RM);
   }
 
-  private estimate_1rm(): void {
-    this.e1RM = this.weight * (1 + this.reps / 40);
+  private estimate_1rm(weight: number, reps: number): number {
+    if (reps === 1) {
+      console.log("reps: 1");
+      console.log(weight);
+      return weight;
+    }
+    console.log(reps, weight);
+    return (1 + reps / 30) * weight;
   }
 
   public addToDB(): void {
