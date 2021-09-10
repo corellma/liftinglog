@@ -1,15 +1,15 @@
 import Dexie from "dexie";
 import { Lift } from "./lift";
 
-export class MyDatabase extends Dexie {
-  liftinglog: Dexie.Table<Lift, number>;
+export class LiftingLog extends Dexie {
+  lifts: Dexie.Table<Lift, number>;
 
   constructor() {
     super("db");
     this.version(1).stores({
-      liftinglog: "++id,lift,weight,reps,e1rm,date",
+      lifts: "++id,lift,weight,reps,e1rm,date",
     });
-    this.liftinglog = this.table("liftinglog");
-    this.liftinglog.mapToClass(Lift);
+    this.lifts = this.table("lifts");
+    this.lifts.mapToClass(Lift);
   }
 }

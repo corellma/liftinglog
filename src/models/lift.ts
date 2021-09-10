@@ -1,17 +1,18 @@
-import { MyDatabase } from "./db";
+import { LiftingLog } from "./db";
+import { NewLiftEntry } from "../components/LiftInputForm";
 
 export class Lift {
   lift: string;
   weight: number;
   reps: number;
   e1RM: number;
-  date: string;
+  date: Date;
 
-  constructor(lift: string, weight: number, reps: number, date?: string) {
-    this.lift = lift;
-    this.weight = weight;
-    this.reps = reps;
-    if (date) this.date = date;
+  constructor(submission: NewLiftEntry) {
+    this.lift = submission.lift;
+    this.weight = submission.weight;
+    this.reps = submission.reps;
+    if (submission.date) this.date = submission.date;
     this.estimate_1rm();
   }
 
@@ -20,8 +21,7 @@ export class Lift {
   }
 
   public addToDB(): void {
-    var db = new MyDatabase();
-    db.liftinglog.add(this);
-    window.location.reload();
+    var db = new LiftingLog();
+    db.lifts.add(this);
   }
 }
