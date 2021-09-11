@@ -20,11 +20,8 @@ export class Lift {
 
   private estimate_1rm(weight: number, reps: number): number {
     if (reps === 1) {
-      console.log("reps: 1");
-      console.log(weight);
       return weight;
     }
-    console.log(reps, weight);
     return (1 + reps / 30) * weight;
   }
 

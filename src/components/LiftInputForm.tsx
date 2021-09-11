@@ -1,11 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import {
-  Button,
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-} from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import { Lift } from "../models/lift";
 import { LiftInput } from "../models/lift_input";
 
@@ -20,22 +14,18 @@ function LiftInputForm() {
   return (
     <form style={{ width: "300px" }} onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <InputLabel style={{ textAlign: "left", marginTop: "20px" }}>
-          Lift
-        </InputLabel>
-        <Select
+        <TextField
           {...register("lift")}
           label="Lift"
           style={{ width: "100%", marginTop: "10px", textAlign: "left" }}
           required
-        >
-          <MenuItem value="Bench Press">Bench Press</MenuItem>
-          <MenuItem value="Deadlift">Deadlift</MenuItem>
-        </Select>
+        />
       </div>
       <div>
         <TextField
-          {...register("weight")}
+          {...register("weight", {
+            valueAsNumber: true,
+          })}
           label="Weight"
           type="number"
           style={{ width: "100%", marginTop: "20px" }}
@@ -48,7 +38,9 @@ function LiftInputForm() {
       </div>
       <div>
         <TextField
-          {...register("reps")}
+          {...register("reps", {
+            valueAsNumber: true,
+          })}
           label="Repetitions"
           type="number"
           style={{ width: "100%", marginTop: "20px" }}
