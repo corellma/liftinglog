@@ -1,5 +1,9 @@
-import { db } from "./db";
-import { LiftInput } from "./lift_input";
+export type LiftInput = {
+  lift: string;
+  weight: number;
+  reps: number;
+  date?: Date;
+};
 
 export class Lift {
   id: number;
@@ -15,7 +19,6 @@ export class Lift {
     this.reps = submission.reps;
     this.e1RM = this.estimate_1rm(this.weight, this.reps);
     if (submission.date) this.date = submission.date;
-    console.log(this.e1RM);
   }
 
   private estimate_1rm(weight: number, reps: number): number {
@@ -23,9 +26,5 @@ export class Lift {
       return weight;
     }
     return (1 + reps / 30) * weight;
-  }
-
-  public addToDB(): void {
-    db.lifts.add(this);
   }
 }

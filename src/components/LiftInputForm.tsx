@@ -1,13 +1,13 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button, TextField } from "@material-ui/core";
-import { Lift } from "../models/lift";
-import { LiftInput } from "../models/lift_input";
+import { Lift, LiftInput } from "../models/lift";
+import { db_worker } from "../models/db_worker";
 
 function LiftInputForm() {
   const { register, handleSubmit } = useForm<LiftInput>();
   const onSubmit: SubmitHandler<LiftInput> = (new_lift_data, event) => {
     const new_lift = new Lift(new_lift_data);
-    new_lift.addToDB();
+    db_worker.add_to_db(new_lift);
     event?.target.reset();
   };
 
