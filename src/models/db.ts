@@ -1,4 +1,4 @@
-import Dexie from "dexie";
+import Dexie, { IndexableTypeArray, PromiseExtended } from "dexie";
 import { Lift } from "./lift";
 
 class LiftingLog extends Dexie {
@@ -10,6 +10,10 @@ class LiftingLog extends Dexie {
       lifts: "++id,lift,weight,reps,e1rm,date",
     });
     this.lifts = this.table("lifts");
+  }
+
+  get_unique_lifts(): Promise<IndexableTypeArray> {
+    return this.lifts.orderBy("lift").uniqueKeys();
   }
 }
 
