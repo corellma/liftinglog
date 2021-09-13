@@ -1,7 +1,7 @@
 import Dexie from "dexie";
 import { Lift } from "./lift";
 
-class LiftingLog extends Dexie {
+export class LiftingLog extends Dexie {
   lifts: Dexie.Table<Lift, number>;
 
   constructor() {
@@ -12,5 +12,3 @@ class LiftingLog extends Dexie {
     this.lifts = this.table("lifts");
   }
 }
-
-export const db = new LiftingLog();
