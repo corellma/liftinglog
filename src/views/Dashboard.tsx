@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import GreyButton from "../components/Button";
-import Lift_Collection from "../components/PR_Table.tsx";
+import PrTable from "../components/PrTable";
 
 export default function Dashboard() {
   return (
@@ -17,7 +17,7 @@ export default function Dashboard() {
       <Typography variant="h6" style={{ paddingTop: "20px", width: "300px" }}>
         Your best PRs by Lift
       </Typography>
-      < Lift_Collection />
+      <PrTable />
       <div style={{ width: "100%", height: "100%", paddingTop: "30px" }}>
         <GreyButton textOnButton="Track a new Lift" href="/lifts" />
       </div>
