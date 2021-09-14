@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import GreyButton from "../components/Button";
-import PrTable from "../components/PrTable";
+import { PrTable } from "../components/PrTable";
 
 export default function Dashboard() {
   return (
@@ -9,7 +9,6 @@ export default function Dashboard() {
         background: "#DCDCDC",
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
         textAlign: "center",
         alignItems: "center",
       }}

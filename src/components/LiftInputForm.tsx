@@ -14,7 +14,7 @@ function LiftInputForm() {
   };
 
   return (
-    <form style={{ width: "300px" }} onSubmit={handleSubmit(onSubmit)}>
+    <form style={{ width: "600px" }} onSubmit={handleSubmit(onSubmit)}>
       <div>
         <TextField
           {...register("lift")}
