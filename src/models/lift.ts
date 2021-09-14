@@ -25,6 +25,6 @@ export class Lift {
     if (reps === 1) {
       return weight;
     }
-    return (1 + reps / 30) * weight;
+    return Math.round((1 + reps / 30) * weight);
   }
 }

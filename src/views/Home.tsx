@@ -8,7 +8,6 @@ export default function Home() {
         background: "#DCDCDC",
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
         textAlign: "center",
         alignItems: "center",
       }}
