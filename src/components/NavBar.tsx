@@ -1,11 +1,9 @@
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import Link from "@material-ui/core/Link";
 import Lifts from "../views/Lifts";
 import Home from "../views/Home";
 import Dashboard from "../views/Dashboard";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -13,20 +11,15 @@ export default function NavBar() {
       <div className="NavBar" style={{ flexGrow: 1 }}>
         <AppBar style={{ background: "#282c34" }} position="static">
           <Toolbar>
-            <Link
-              variant="h6"
-              color="inherit"
-              href="/"
-              style={{ flexGrow: 1, textDecoration: "none" }}
-            >
+            <Link to="/" style={{ flexGrow: 1, textDecoration: "none" }}>
               Lifting Log
             </Link>
-            <Button color="inherit" href="/dashboard">
+            <Link color="inherit" to="/dashboard">
               Dashboard
-            </Button>
-            <Button color="inherit" href="/lifts">
+            </Link>
+            <Link color="inherit" to="/lifts">
               Lifts
-            </Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </div>
