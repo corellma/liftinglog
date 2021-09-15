@@ -3,7 +3,13 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Lifts from "../views/Lifts";
 import Home from "../views/Home";
 import Dashboard from "../views/Dashboard";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link as RouterLink,
+} from "react-router-dom";
+import { Button, Link } from "@material-ui/core";
 
 export default function NavBar() {
   return (
@@ -11,15 +17,21 @@ export default function NavBar() {
       <div className="NavBar" style={{ flexGrow: 1 }}>
         <AppBar style={{ background: "#282c34" }} position="static">
           <Toolbar>
-            <Link to="/" style={{ flexGrow: 1, textDecoration: "none" }}>
+            <Link
+              variant="h6"
+              color="inherit"
+              component={RouterLink}
+              to="/"
+              style={{ flexGrow: 1, textDecoration: "none" }}
+            >
               Lifting Log
             </Link>
-            <Link color="inherit" to="/dashboard">
+            <Button color="inherit" component={RouterLink} to="/dashboard">
               Dashboard
-            </Link>
-            <Link color="inherit" to="/lifts">
+            </Button>
+            <Button color="inherit" component={RouterLink} to="/lifts">
               Lifts
-            </Link>
+            </Button>
           </Toolbar>
         </AppBar>
       </div>
