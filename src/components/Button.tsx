@@ -1,4 +1,5 @@
 import { Button } from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
 
 type buttonProps = {
   textOnButton: string;
@@ -9,9 +10,10 @@ type buttonProps = {
 function GreyButton({ textOnButton, href, marginRight }: buttonProps) {
   return (
     <Button
+      component={RouterLink}
+      to={href ? href : ""}
       variant="contained"
       color="primary"
-      href={href}
       style={{
         marginRight: marginRight ? "20px" : "",
         backgroundColor: "#282c34",

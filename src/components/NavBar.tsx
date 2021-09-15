@@ -18,10 +18,10 @@ export default function NavBar() {
         <AppBar style={{ background: "#282c34" }} position="static">
           <Toolbar>
             <Link
-              variant="h6"
-              color="inherit"
               component={RouterLink}
               to="/"
+              variant="h6"
+              color="inherit"
               style={{ flexGrow: 1, textDecoration: "none" }}
             >
               Lifting Log
