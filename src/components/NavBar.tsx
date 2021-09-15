@@ -3,7 +3,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Lifts from "../views/Lifts";
 import Home from "../views/Home";
 import Dashboard from "../views/Dashboard";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
