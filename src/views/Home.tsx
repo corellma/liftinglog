@@ -5,11 +5,12 @@ export default function Home() {
   return (
     <div
       style={{
-        background: "#DCDCDC",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
         alignItems: "center",
+        marginLeft: "400px",
+        marginRight: "400px",
       }}
     >
       <Typography variant="h4" style={{ paddingTop: "40px" }}>

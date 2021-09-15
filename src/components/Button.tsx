@@ -3,11 +3,10 @@ import { Button } from "@material-ui/core";
 type buttonProps = {
   textOnButton: string;
   href?: string;
-  type?: string;
   marginRight?: boolean;
 };
 
-function GreyButton({ textOnButton, href, type, marginRight }: buttonProps) {
+function GreyButton({ textOnButton, href, marginRight }: buttonProps) {
   return (
     <Button
       variant="contained"

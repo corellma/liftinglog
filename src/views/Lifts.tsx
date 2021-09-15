@@ -6,14 +6,13 @@ export default function Lifts() {
   return (
     <div
       style={{
-        background: "#DCDCDC",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
         alignItems: "center",
       }}
     >
-      <Typography variant="h6" style={{ paddingTop: "20px", width: "300px" }}>
+      <Typography variant="h6" style={{ paddingTop: "40px", width: "300px" }}>
         Enter a new PR for a Lift
       </Typography>
       <LiftInputForm />

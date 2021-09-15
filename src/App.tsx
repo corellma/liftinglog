@@ -7,8 +7,8 @@ function App() {
     <div className="App">
       <Container
         disableGutters
-        maxWidth="md"
-        style={{ background: "#DCDCDC", height: "100vh" }}
+        maxWidth={false}
+        style={{ background: "#DCDCDC" }}
       >
         <NavBar />
       </Container>
