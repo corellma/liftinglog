@@ -6,12 +6,18 @@ type buttonProps = {
   textOnButton: string;
   href?: string;
   marginRight?: boolean;
+  isRouter?: boolean;
 };
 
-function GreyButton({ textOnButton, href, marginRight }: buttonProps) {
+function GreyButton({
+  textOnButton,
+  href,
+  marginRight,
+  isRouter,
+}: buttonProps) {
   return (
     <Button
-      component={RouterLink}
+      component={isRouter ? RouterLink : 'button'}
       to={href ? href : ''}
       variant='contained'
       color='primary'
