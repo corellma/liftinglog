@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import GreyButton from '../components/Button';
+import GreyButton from '../components/Button/Button';
 import { PrTable } from '../components/PrTable';
 
 export default function Dashboard() {
