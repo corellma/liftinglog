@@ -1,11 +1,12 @@
+# Runs the test suite when a push to a /feature branch occurs.
 name: Continuous Integration
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: ["*/*"]
 
 jobs:
-  test_pull_request:
+  test_and_build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
