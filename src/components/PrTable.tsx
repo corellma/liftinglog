@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { DB_Service } from "../models/db.service";
-import { Lift } from "../models/lift";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { DB_Service } from '../models/db.service';
+import { Lift } from '../models/lift';
 import {
   Table,
   TableBody,
@@ -10,13 +11,13 @@ import {
   TableRow,
   Paper,
   makeStyles,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 const useStyles = makeStyles({
   table: {
-    width: "80%",
-    height: "auto",
-    marginTop: "40px",
+    width: '80%',
+    height: 'auto',
+    marginTop: '40px',
   },
 });
 
@@ -44,7 +45,7 @@ export function PrTable() {
         );
         return found_lifts.find((lift) => lift.e1RM === highest_e1rm);
       })
-      .filter((lift) => typeof lift !== "undefined") as Lift[];
+      .filter((lift) => typeof lift !== 'undefined') as Lift[];
     setPrLifts(pr_lifts);
   }
 

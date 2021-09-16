@@ -1,6 +1,6 @@
-import { Collection } from "dexie";
-import { LiftingLog } from "./db";
-import { Lift } from "./lift";
+import { Collection } from 'dexie';
+import { LiftingLog } from './db';
+import { Lift } from './lift';
 
 export class DB_Service {
   db: LiftingLog;
@@ -14,10 +14,10 @@ export class DB_Service {
   }
 
   get_all_entries(): Collection<Lift, number> {
-    return this.db.lifts.where("lift").notEqual("");
+    return this.db.lifts.where('lift').notEqual('');
   }
 
   get_all_exercises(): Promise<any[]> {
-    return this.db.lifts.orderBy("lift").uniqueKeys();
+    return this.db.lifts.orderBy('lift').uniqueKeys();
   }
 }
