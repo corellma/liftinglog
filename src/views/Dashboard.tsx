@@ -20,7 +20,7 @@ export default function Dashboard() {
       </Typography>
       <PrTable />
       <div style={{ width: '100%', height: '100%', paddingTop: '40px' }}>
-        <GreyButton textOnButton='Track a new Lift' href='/lifts' />
+        <GreyButton textOnButton='Track a new Lift' href='/lifts' isRouter />
       </div>
     </div>
   );

@@ -36,8 +36,17 @@ export default function Home() {
         locally in your browser.
       </Typography>
       <div style={{ width: '100%', height: '100%', paddingTop: '30px' }}>
-        <GreyButton textOnButton='Track a Lift' href='/lifts' marginRight />
-        <GreyButton textOnButton='Visit your Dashboard' href='/dashboard' />
+        <GreyButton
+          textOnButton='Track a Lift'
+          href='/lifts'
+          marginRight
+          isRouter
+        />
+        <GreyButton
+          textOnButton='Visit your Dashboard'
+          href='/dashboard'
+          isRouter
+        />
       </div>
     </div>
   );
