@@ -13,7 +13,6 @@ function App() {
         <Container
           disableGutters
           maxWidth={false}
-          style={{ background: "#DCDCDC" }}
         >
           <NavBar />
         </Container>
