@@ -20,7 +20,11 @@ export default function PRs() {
       </Typography>
       <PrTable />
       <div style={{ width: "100%", height: "100%", paddingTop: "40px" }}>
-        <GreyButton textOnButton="Track a new Lift" href="/lifts" isRouter />
+        <GreyButton
+          textOnButton="Track a new Lift"
+          href="/submitlift"
+          isRouter
+        />
       </div>
     </div>
   );

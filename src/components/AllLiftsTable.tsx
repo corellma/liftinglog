@@ -21,26 +21,25 @@ const useStyles = makeStyles({
 
 const table_columns = ["Exercise", "Weight", "Reps", "Date", "e1RM"];
 
-export function PrTable() {
+export function AllLiftsTable() {
   const db_service = new DB_Service();
   const classes = useStyles();
-  const [prLifts, setPrLifts] = useState<Lift[]>([]);
+  const [lifts, setLifts] = useState<Lift[]>([]);
 
   useEffect(() => {
-    fill_pr_lifts();
+    fill_all_lifts();
   });
 
-  async function fill_pr_lifts() {
-    const pr_lifts = await db_service.get_prLifts();
-    setPrLifts(pr_lifts);
+  async function fill_all_lifts() {
+    setLifts((await db_service.get_all_entries().sortBy("Date")).reverse());
   }
 
-  if (prLifts.length > 0) {
+  if (lifts.length > 0) {
     return (
       <TableContainer className={classes.table} component={Paper}>
         <Table>
           <Header columns={table_columns} />
-          <Body pr_lifts={prLifts} />
+          <Body pr_lifts={lifts} />
         </Table>
       </TableContainer>
     );
@@ -50,7 +49,7 @@ export function PrTable() {
         variant="subtitle1"
         style={{ paddingTop: "20px", width: "300px" }}
       >
-        ... must be tracked first.
+        ... is empty.
       </Typography>
     );
   }

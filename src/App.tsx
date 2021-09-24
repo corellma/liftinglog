@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import PRs from "./views/PRs";
 import NavBar from "./components/NavBar";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import AllLifts from "./views/AllLifts";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       <Switch>
         <Route path="/prs">
           <PRs />
+        </Route>
+        <Route path="/alllifts">
+          <AllLifts />
         </Route>
         <Route path="/submitlift">
           <SubmitLift />

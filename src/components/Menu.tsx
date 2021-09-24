@@ -93,7 +93,13 @@ export default function Menu() {
                 >
                   Show PRs
                 </MenuItem>
-                <MenuItem onClick={handleClose}>Show all Lifts</MenuItem>
+                <MenuItem
+                  component={RouterLink}
+                  to="/alllifts"
+                  onClick={handleClose}
+                >
+                  Show all Lifts
+                </MenuItem>
               </MenuList>
             </Paper>
           </Grow>
