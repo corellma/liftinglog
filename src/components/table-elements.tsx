@@ -1,6 +1,6 @@
-import React from "react";
-import { TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
-import { Lift } from "../models/lift";
+import React from 'react';
+import { TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
+import { Lift } from '../models/lift';
 
 interface HeaderProps {
   columns: string[];
