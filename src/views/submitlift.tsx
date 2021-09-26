@@ -1,8 +1,8 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import LiftInputForm from "../components/LiftInputForm";
+import InputForm from "../components/inputform";
 
-export default function Submit_Lift() {
+export default function SubmitLift() {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ export default function Submit_Lift() {
       <Typography variant="h6" style={{ paddingTop: "40px", width: "300px" }}>
         Enter a new PR for a Lift
       </Typography>
-      <LiftInputForm />
+      <InputForm />
     </div>
   );
 }

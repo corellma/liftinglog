@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Link as RouterLink } from "react-router-dom";
 import { Button, Link } from "@material-ui/core";
-import Menu from "./Menu";
+import Menu from "./menu";
 
 export default function NavBar() {
   return (

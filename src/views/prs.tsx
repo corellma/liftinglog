@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import GreyButton from "../components/Button";
-import { PrTable } from "../components/PrTable";
+import GreyButton from "../components/button";
+import { PrTable } from "../components/prtable";
 
 export default function PRs() {
   return (

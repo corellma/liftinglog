@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { DB_Service } from "../models/db.service";
+import { DbConnector } from "../models/dbconnector";
 import { Lift } from "../models/lift";
 import {
   Table,
@@ -9,7 +9,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { Header, Body } from "./TableElements";
+import { Header, Body } from "./tableelements";
 
 const useStyles = makeStyles({
   table: {
@@ -19,26 +19,26 @@ const useStyles = makeStyles({
   },
 });
 
-const table_columns = ["Exercise", "Weight", "Reps", "Date", "e1RM"];
+const tableColumns = ["Exercise", "Weight", "Reps", "Date", "e1RM"];
 
-export function AllLiftsTable() {
-  const db_service = new DB_Service();
+export default function LiftsTable() {
+  const dbConnector = new DbConnector();
   const classes = useStyles();
   const [lifts, setLifts] = useState<Lift[]>([]);
 
   useEffect(() => {
-    fill_all_lifts();
+    fillAllLifts();
   });
 
-  async function fill_all_lifts() {
-    setLifts((await db_service.get_all_entries().sortBy("Date")).reverse());
+  async function fillAllLifts() {
+    setLifts((await dbConnector.getAllEntries().sortBy("Date")).reverse());
   }
 
   if (lifts.length > 0) {
     return (
       <TableContainer className={classes.table} component={Paper}>
         <Table>
-          <Header columns={table_columns} />
+          <Header columns={tableColumns} />
           <Body pr_lifts={lifts} />
         </Table>
       </TableContainer>

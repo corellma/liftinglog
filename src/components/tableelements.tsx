@@ -2,15 +2,15 @@ import React from "react";
 import { TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
 import { Lift } from "../models/lift";
 
-interface IHeaderProps {
+interface HeaderProps {
   columns: string[];
 }
 
-interface IRowProps {
+interface BodyProps {
   pr_lifts: Lift[];
 }
 
-export function Header(props: IHeaderProps) {
+export function Header(props: HeaderProps) {
   return (
     <TableHead>
       <TableRow>
@@ -24,7 +24,7 @@ export function Header(props: IHeaderProps) {
   );
 }
 
-export function Body(props: IRowProps) {
+export function Body(props: BodyProps) {
   return (
     <TableBody>
       {props.pr_lifts.map((prLift) => {

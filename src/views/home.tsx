@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import GreyButton from "../components/Button";
+import GreyButton from "../components/button";
 
 export default function Home() {
   return (

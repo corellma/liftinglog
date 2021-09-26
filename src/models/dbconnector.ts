@@ -2,41 +2,41 @@ import { Collection } from "dexie";
 import { LiftingLog } from "./db";
 import { Lift } from "./lift";
 
-export class DB_Service {
+export class DbConnector {
   db: LiftingLog;
 
   constructor() {
     this.db = new LiftingLog();
   }
 
-  add_to_db(lift: Lift): Promise<number> {
+  addToDb(lift: Lift): Promise<number> {
     return this.db.lifts.add(lift);
   }
 
-  get_all_entries(): Collection<Lift, number> {
+  getAllEntries(): Collection<Lift, number> {
     return this.db.lifts.where("lift").notEqual("");
   }
 
-  get_all_exercises(): Promise<any[]> {
+  getAllExercises(): Promise<any[]> {
     return this.db.lifts.orderBy("lift").uniqueKeys();
   }
 
-  async get_prLifts(): Promise<Lift[]> {
-    const all_entries = await this.get_all_entries().toArray();
-    const unique_exercises = await this.get_all_exercises();
-    const pr_lifts = unique_exercises
+  async getPrLifts(): Promise<Lift[]> {
+    const allEntries = await this.getAllEntries().toArray();
+    const uniqueExercises = await this.getAllExercises();
+    const prLifts = uniqueExercises
       .map((unique_exercise) => {
-        const found_lifts = all_entries.filter((entry) => {
+        const found_lifts = allEntries.filter((entry) => {
           return entry.lift === unique_exercise;
         });
-        const highest_e1rm = Math.max(
+        const highestE1RM = Math.max(
           ...found_lifts.map((lift) => {
             return lift.e1RM;
           })
         );
-        return found_lifts.find((lift) => lift.e1RM === highest_e1rm);
+        return found_lifts.find((lift) => lift.e1RM === highestE1RM);
       })
       .filter((lift) => typeof lift !== "undefined") as Lift[];
-    return pr_lifts;
+    return prLifts;
   }
 }
