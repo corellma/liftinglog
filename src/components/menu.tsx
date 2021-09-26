@@ -5,7 +5,6 @@ import {
   Button,
   Popper,
   Grow,
-  ClickAwayListener,
 } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import React from "react";
