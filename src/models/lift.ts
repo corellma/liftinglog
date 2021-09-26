@@ -17,11 +17,11 @@ export class Lift {
     this.lift = submission.lift;
     this.weight = submission.weight;
     this.reps = submission.reps;
-    this.e1RM = Lift.estimate_1rm(this.weight, this.reps);
+    this.e1RM = Lift.estimate1rm(this.weight, this.reps);
     if (submission.date) this.date = submission.date;
   }
 
-  static estimate_1rm(weight: number, reps: number): number {
+  static estimate1rm(weight: number, reps: number): number {
     if (reps === 1) {
       return weight;
     }

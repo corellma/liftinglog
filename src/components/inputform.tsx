@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button, TextField } from "@material-ui/core";
 import { Lift, LiftInput } from "../models/lift";
-import { DB_Service } from "../models/db.service";
+import { DbConnector } from "../models/dbconnector";
 
-function LiftInputForm() {
-  const db_service = new DB_Service();
+export default function InputForm() {
+  const dbConnector = new DbConnector();
   const [weight, setWeight] = useState(0);
   const [reps, setReps] = useState(0);
-  let e1rm = Lift.estimate_1rm(weight, reps);
+  let e1rm = Lift.estimate1rm(weight, reps);
   const { register, handleSubmit } = useForm<LiftInput>();
-  const onSubmit: SubmitHandler<LiftInput> = (new_lift_data, event) => {
-    const new_lift = new Lift(new_lift_data);
-    db_service.add_to_db(new_lift).then(() => {
+  const onSubmit: SubmitHandler<LiftInput> = (newLiftData, event) => {
+    const newLift = new Lift(newLiftData);
+    dbConnector.addToDb(newLift).then(() => {
       event?.target.reset();
     });
   };
@@ -35,7 +35,7 @@ function LiftInputForm() {
           onChange={(event) => {
             setWeight(parseInt(event.target.value));
             if (reps != 0 && weight != 0) {
-              e1rm = Lift.estimate_1rm(weight, reps);
+              e1rm = Lift.estimate1rm(weight, reps);
             }
           }}
           label="Weight"
@@ -56,7 +56,7 @@ function LiftInputForm() {
           onChange={(event) => {
             setReps(parseInt(event.target.value));
             if (reps != 0 && weight != 0) {
-              e1rm = Lift.estimate_1rm(weight, reps);
+              e1rm = Lift.estimate1rm(weight, reps);
             }
           }}
           label="Repetitions"
@@ -104,5 +104,3 @@ function LiftInputForm() {
     </form>
   );
 }
-
-export default LiftInputForm;

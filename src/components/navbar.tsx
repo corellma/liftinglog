@@ -3,6 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Link as RouterLink } from "react-router-dom";
 import { Button, Link } from "@material-ui/core";
+import Menu from "./menu";
 
 export default function NavBar() {
   return (
@@ -18,11 +19,9 @@ export default function NavBar() {
           >
             Lifting Log
           </Link>
-          <Button color="inherit" component={RouterLink} to="/dashboard">
-            Dashboard
-          </Button>
-          <Button color="inherit" component={RouterLink} to="/lifts">
-            Lifts
+          <Menu />
+          <Button color="inherit" component={RouterLink} to="/submitlift">
+            New Lift
           </Button>
         </Toolbar>
       </AppBar>

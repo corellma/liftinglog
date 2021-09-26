@@ -1,28 +1,29 @@
 import { Container } from "@material-ui/core";
 import React from "react";
-import Lifts from "./views/Lifts";
-import Home from "./views/Home";
-import Dashboard from "./views/Dashboard";
-import NavBar from "./components/NavBar";
+import SubmitLift from "./views/submitlift";
+import Home from "./views/home";
+import PRs from "./views/prs";
+import NavBar from "./components/navbar";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import AllLifts from "./views/lifts";
 
-function App() {
+export default function App() {
   return (
     <Router>
       <div className="App">
-        <Container
-          disableGutters
-          maxWidth={false}
-        >
+        <Container disableGutters maxWidth={false}>
           <NavBar />
         </Container>
       </div>
       <Switch>
-        <Route path="/dashboard">
-          <Dashboard />
+        <Route path="/prs">
+          <PRs />
         </Route>
-        <Route path="/lifts">
-          <Lifts />
+        <Route path="/alllifts">
+          <AllLifts />
+        </Route>
+        <Route path="/submitlift">
+          <SubmitLift />
         </Route>
         <Route path="/">
           <Home />
@@ -31,5 +32,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
